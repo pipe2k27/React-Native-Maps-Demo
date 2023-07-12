@@ -6,8 +6,9 @@ const Home = () => {
   const [destinations, setDestinations] = useState<any>([]);
 
   const openGoogleMaps = async () => {
-    const baseUrl = `https://www.google.com/maps/dir/?api=1&origin=35.57896905267314%2C139.63607738404906&destination=`;
-    const nextURl = `${destinations[0].lat}%2C${destinations[0].lng}&travelmode=driving`;
+    const origin = `${destinations[0].lat}%2C${destinations[0].lng}`;
+    const baseUrl = `https://www.google.com/maps/dir/?api=1&origin=${origin}&destination=`;
+    const nextURl = `${origin}&travelmode=driving`;
     const waypoints = destinations.map((element: any) => {
       return `${element.lat}%2C${element.lng}`;
     });
