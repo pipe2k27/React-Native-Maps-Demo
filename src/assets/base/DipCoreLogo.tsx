@@ -1,12 +1,12 @@
 import * as React from 'react';
 import Svg, { G, Path, Defs, ClipPath, Rect } from 'react-native-svg';
 
-interface DipCoreLogoProps {
+interface Props {
   width?: number;
   height?: number;
 }
 
-export const DipCoreLogo = (props: DipCoreLogoProps) => (
+export const DipCoreLogo = (props: Props) => (
   <Svg
     width={props.width || 197}
     height={props.height || 48}
