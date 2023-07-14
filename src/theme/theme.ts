@@ -30,6 +30,9 @@ export const theme = {
   lineHeight: {
     default: 18,
   },
+  letterSpacing: {
+    default: -0.165,
+  },
 };
 
 export const commonStyles = StyleSheet.create({

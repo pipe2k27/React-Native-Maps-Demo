@@ -1,2 +1,3 @@
-export * from './base/icons/LogoLarge';
-export * from './base/icons/NRILogo';
+export * from './base/DipCoreLogo';
+export * from './base/NriBlueLogo';
+export * from './base/NriWhiteLogo';

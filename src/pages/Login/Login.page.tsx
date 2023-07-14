@@ -1,7 +1,7 @@
 import React from 'react';
 import { ImageBackground, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import { LogoLarge, NRIlogo } from '../../assets';
 import { theme } from '../../theme';
+import { DipCoreLogo, NriBlueLogo } from '../../assets';
 
 const Login = () => (
   <View style={styles.container}>
@@ -10,7 +10,7 @@ const Login = () => (
       resizeMode="cover"
       style={styles.image}
     >
-      <LogoLarge />
+      <DipCoreLogo />
     </ImageBackground>
     <View style={styles.formContainer}>
       <Text style={styles.label}>Username</Text>
@@ -40,7 +40,7 @@ const Login = () => (
         paddingBottom: 38,
       }}
     >
-      <NRIlogo />
+      <NriBlueLogo />
     </View>
   </View>
 );
