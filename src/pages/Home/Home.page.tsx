@@ -44,16 +44,6 @@ const Home = () => {
           <Text style={styles.text}>Open {index + 1} Route</Text>
         </TouchableOpacity>
       ))}
-
-      <Text
-        style={{
-          fontFamily: theme.fontFamily.primary,
-          color: theme.colors.primary,
-          fontSize: 54,
-        }}
-      >
-        すべ
-      </Text>
     </View>
   );
 };
