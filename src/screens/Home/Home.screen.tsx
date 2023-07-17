@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Linking } from 'react-native';
 import packeges from '../../components/packages.json';
+import { ResumePackage } from '../../components';
 
 const Home = () => {
   const [allDestinations, setAllDestinations] = useState<any>([]);
@@ -42,6 +43,7 @@ const Home = () => {
           <Text style={styles.text}>Open {index + 1} Route</Text>
         </TouchableOpacity>
       ))}
+      <ResumePackage />
     </View>
   );
 };

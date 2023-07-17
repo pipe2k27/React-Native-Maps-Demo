@@ -34,4 +34,8 @@ export const styles = StyleSheet.create({
   grayLight: {
     color: theme.colors.grayDark1,
   },
+  subtitle: {
+    fontFamily: theme.fontFamily.primaryBold,
+    fontSize: theme.fontSize.type3,
+  },
 });

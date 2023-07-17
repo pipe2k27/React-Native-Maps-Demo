@@ -9,6 +9,7 @@ interface Props extends TextProps {
   type3?: boolean;
   type4?: boolean;
   type5?: boolean;
+  subtitle?: boolean;
   children: string;
 }
 
@@ -19,6 +20,7 @@ export const StyledText: React.FC<Props> = ({
   type3,
   type4,
   type5,
+  subtitle,
   children,
   style = {},
   ...props
@@ -30,6 +32,7 @@ export const StyledText: React.FC<Props> = ({
     type2 && styles.type2,
     type3 && styles.type3,
     type4 && styles.type4,
+    subtitle && styles.subtitle,
     style,
   ];
 
