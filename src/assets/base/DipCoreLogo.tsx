@@ -4,6 +4,7 @@ import Svg, { G, Path, Defs, ClipPath, Rect } from 'react-native-svg';
 interface Props {
   width?: number;
   height?: number;
+  style?: any;
 }
 
 export const DipCoreLogo = (props: Props) => (

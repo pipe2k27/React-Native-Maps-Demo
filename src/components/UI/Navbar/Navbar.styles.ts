@@ -7,8 +7,38 @@ const height = windowHeight * 0.25;
 
 export const styles = StyleSheet.create({
   navbar: {
-    height: height,
+    // height: height,
+    paddingTop: 10,
     backgroundColor: theme.colors.primary,
     opacity: 1,
+  },
+  logosContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  rectangle: {
+    width: 1,
+    height: 10,
+    marginLeft: 10,
+    backgroundColor: theme.colors.white,
+  },
+  navbarTextContainer: {
+    paddingLeft: 40,
+    paddingTop: 20,
+  },
+  textColorGrey: {
+    color: theme.colors.greyDark1,
+  },
+  navTextSubTitle: {
+    fontSize: 12,
+    color: theme.colors.white,
+  },
+  navTextTitle: {
+    fontSize: 24,
+    color: theme.colors.white,
+    lineHeight: 24,
+    paddingTop: 4,
+    paddingBottom: 10,
   },
 });
