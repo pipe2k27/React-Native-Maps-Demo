@@ -27,4 +27,8 @@ export const styles = StyleSheet.create({
     fontFamily: theme.fontFamily.primary,
     fontSize: theme.fontSize.type5,
   },
+  subtitle: {
+    fontFamily: theme.fontFamily.primaryBold,
+    fontSize: theme.fontSize.type3,
+  },
 });
