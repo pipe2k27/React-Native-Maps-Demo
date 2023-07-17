@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Linking } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Linking, StatusBar } from 'react-native';
 import packeges from '../../components/packages.json';
 
 import { theme } from '../../theme';
@@ -35,6 +35,7 @@ const Home = () => {
 
   return (
     <View style={styles.container}>
+      <StatusBar backgroundColor={theme.colors.primary} />
       {allDestinations.map((destinations: any, index: number) => (
         <TouchableOpacity
           style={styles.btn}
