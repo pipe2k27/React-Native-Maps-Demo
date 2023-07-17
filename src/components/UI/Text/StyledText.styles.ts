@@ -5,6 +5,7 @@ export const styles = StyleSheet.create({
   text: {
     color: theme.colors.default,
     letterSpacing: theme.letterSpacing.default,
+    fontFamily: theme.fontFamily.primary,
     // lineHeight: theme.lineHeight.default,
   },
   type1: {
@@ -26,5 +27,11 @@ export const styles = StyleSheet.create({
   type5: {
     fontFamily: theme.fontFamily.primary,
     fontSize: theme.fontSize.type5,
+  },
+  white: {
+    color: theme.colors.white,
+  },
+  grayLight: {
+    color: theme.colors.grayDark1,
   },
 });

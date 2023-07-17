@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Linking } from 'react-native';
 import packeges from '../../components/packages.json';
 
-import { theme } from '../../theme';
-
 const Home = () => {
   const [allDestinations, setAllDestinations] = useState<any>([]);
 

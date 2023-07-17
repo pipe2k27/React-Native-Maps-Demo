@@ -2,14 +2,14 @@ import * as React from 'react';
 import Svg, { G, Path, Defs, ClipPath, Rect } from 'react-native-svg';
 
 interface Props {
-  width?: number;
-  height?: number;
+  width?: number | string;
+  height?: number | string;
 }
 
 export const DipCoreLogo = (props: Props) => (
   <Svg
-    width={props.width || 197}
-    height={props.height || 48}
+    width={props.width || '50%'}
+    height={props.height || 60}
     viewBox="0 0 197 48"
     fill="none"
     {...props}

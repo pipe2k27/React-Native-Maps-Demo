@@ -2,12 +2,14 @@ import { StyleSheet } from 'react-native';
 
 export const theme = {
   colors: {
-    primary: '#022d83',
+    primary: '#1C3180',
     default: '#1a1a1a',
-    greyDark1: '#8c8c8c',
-    grey: '#dcdcdc',
-    greyLigth1: '#f0f0f0',
+    grayDark1: '#8c8c8c',
+    gray: '#dcdcdc',
+    grayLigth1: '#f0f0f0',
+    grayLigth2: '#cecece',
     white: '#FFFFFF',
+    error: 'red',
   },
   fontSize: {
     type1: 32,
