@@ -1,9 +1,8 @@
 import React from 'react';
 import { View } from 'react-native';
 import { DipCoreLogo, NriBlueLogo } from '../../assets';
-import { styles } from './Login.styles';
 import { Button, StyledText, StyledTextInput } from '../../components';
-import { useNavigation } from '@react-navigation/native';
+import { styles } from './Login.styles';
 
 export const Login = ({ navigation }: any) => (
   <View style={{ flex: 1 }}>
