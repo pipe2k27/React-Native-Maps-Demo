@@ -9,9 +9,8 @@ interface Props extends TouchableOpacityProps {
   transparent?: boolean;
   xl?: boolean;
   lg?: boolean;
-  type3?: boolean;
   sm?: boolean;
-  type5?: boolean;
+  xs?: boolean;
 }
 
 export const Button: React.FC<Props> = ({
@@ -20,9 +19,8 @@ export const Button: React.FC<Props> = ({
   transparent,
   xl,
   lg,
-  type3,
   sm,
-  type5,
+  xs,
   style = {},
   ...props
 }) => {
@@ -30,12 +28,11 @@ export const Button: React.FC<Props> = ({
 
   const textStyles = {
     white: primary,
-    grayLight: transparent,
+    grayDark: transparent,
     xl,
     lg,
-    type3,
     sm,
-    type5,
+    xs,
   };
 
   return (
