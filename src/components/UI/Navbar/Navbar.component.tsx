@@ -9,7 +9,7 @@ interface Props extends ViewProps {}
 
 export const Navbar: React.FC<Props> = ({ style = {}, ...props }) => {
   const navbarStyles = [style, styles.navbar];
-  const [date, setDate] = useState(new Date(1598051730000));
+  const [date, setDate] = useState(new Date());
 
   const onChange = (event: any, selectedDate: any) => {
     const currentDate = selectedDate;
