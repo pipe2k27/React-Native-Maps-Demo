@@ -3,16 +3,17 @@ import {
   View,
   Text,
   TouchableOpacity,
-  StyleSheet,
   Linking,
   ScrollView,
   Dimensions,
-  TextInput,
   StatusBar,
 } from 'react-native';
-import { ResumePackage, StyledText } from '../../components';
+import { ResumePackage, StyledText, StyledTextInput } from '../../components';
 import packeges from '../../components/packages.json';
 import { theme } from '../../theme';
+import { SearchIcon } from '../../assets';
+import { styles } from './Home.styles';
+import { styles as ResumePackageStyles } from '../../components/UI/ResumePackage/ResumePackage.styles';
 
 type Waypoint = {
   lat: number;
@@ -49,13 +50,17 @@ export const Home = () => {
   }, []);
 
   return (
-    <>
+    <View style={styles.container}>
       <StatusBar backgroundColor={theme.colors.primary} />
-      <ScrollView style={{ ...styles.scroll, height: height - 260 }} stickyHeaderIndices={[1]}>
+      <ScrollView contentContainerStyle={styles.scroll} stickyHeaderIndices={[3]}>
         <ResumePackage />
+        <StyledText primary lg bold style={ResumePackageStyles.title}>
+          Google Mapsで配送を開始
+        </StyledText>
+        <View style={ResumePackageStyles.underline}></View>
+
         <View style={styles.sticky}>
-          <StyledText>Search</StyledText>
-          <TextInput style={styles.input} placeholder="Search" />
+          <StyledTextInput placeholder="配送先絞り込み" rightIcon={<SearchIcon />} />
         </View>
         <View style={styles.list}>
           {allDestinations.map((destinations: any, index: number) => (
@@ -67,41 +72,44 @@ export const Home = () => {
               <Text style={styles.text}>Open {index + 1} Route</Text>
             </TouchableOpacity>
           ))}
+          {allDestinations.map((destinations: any, index: number) => (
+            <TouchableOpacity
+              style={styles.btn}
+              onPress={() => openGoogleMaps(destinations)}
+              key={index}
+            >
+              <Text style={styles.text}>Open {index + 1} Route</Text>
+            </TouchableOpacity>
+          ))}
+          {allDestinations.map((destinations: any, index: number) => (
+            <TouchableOpacity
+              style={styles.btn}
+              onPress={() => openGoogleMaps(destinations)}
+              key={index}
+            >
+              <Text style={styles.text}>Open {index + 1} Route</Text>
+            </TouchableOpacity>
+          ))}
+          {allDestinations.map((destinations: any, index: number) => (
+            <TouchableOpacity
+              style={styles.btn}
+              onPress={() => openGoogleMaps(destinations)}
+              key={index}
+            >
+              <Text style={styles.text}>Open {index + 1} Route</Text>
+            </TouchableOpacity>
+          ))}
+          {allDestinations.map((destinations: any, index: number) => (
+            <TouchableOpacity
+              style={styles.btn}
+              onPress={() => openGoogleMaps(destinations)}
+              key={index}
+            >
+              <Text style={styles.text}>Open {index + 1} Route</Text>
+            </TouchableOpacity>
+          ))}
         </View>
       </ScrollView>
-    </>
+    </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    flexGrow: 1,
-  },
-  scroll: {
-    backgroundColor: theme.colors.white,
-    width: '100%',
-    overflow: 'scroll',
-  },
-  sticky: {
-    backgroundColor: theme.colors.white,
-    padding: 20,
-  },
-  input: {
-    borderColor: 'black',
-    borderStyle: 'solid',
-    borderWidth: 1,
-    borderRadius: 4,
-  },
-  list: { padding: 20 },
-  btn: {
-    backgroundColor: '#457b9d',
-    padding: 16,
-    borderRadius: 12,
-    marginBottom: 15,
-  },
-  text: {
-    color: '#fff',
-  },
-});
