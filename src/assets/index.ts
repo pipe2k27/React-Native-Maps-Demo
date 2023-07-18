@@ -6,3 +6,5 @@ export * from './base/HourGlassIcon';
 export * from './base/NriBlueLogo';
 export * from './base/NriWhiteLogo';
 export * from './base/SearchIcon';
+export * from './base/TruckIcon';
+export * from './base/CheckIcon';

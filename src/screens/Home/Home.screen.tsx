@@ -8,7 +8,7 @@ import {
   Dimensions,
   StatusBar,
 } from 'react-native';
-import { ResumePackage, StyledText, StyledTextInput } from '../../components';
+import { ResumePackage, StyledText, StyledTextInput, Trip } from '../../components';
 import packeges from '../../components/packages.json';
 import { theme } from '../../theme';
 import { SearchIcon } from '../../assets';
@@ -64,49 +64,11 @@ export const Home = () => {
         </View>
         <View style={styles.list}>
           {allDestinations.map((destinations: any, index: number) => (
-            <TouchableOpacity
-              style={styles.btn}
-              onPress={() => openGoogleMaps(destinations)}
+            <Trip
               key={index}
-            >
-              <Text style={styles.text}>Open {index + 1} Route</Text>
-            </TouchableOpacity>
-          ))}
-          {allDestinations.map((destinations: any, index: number) => (
-            <TouchableOpacity
-              style={styles.btn}
-              onPress={() => openGoogleMaps(destinations)}
-              key={index}
-            >
-              <Text style={styles.text}>Open {index + 1} Route</Text>
-            </TouchableOpacity>
-          ))}
-          {allDestinations.map((destinations: any, index: number) => (
-            <TouchableOpacity
-              style={styles.btn}
-              onPress={() => openGoogleMaps(destinations)}
-              key={index}
-            >
-              <Text style={styles.text}>Open {index + 1} Route</Text>
-            </TouchableOpacity>
-          ))}
-          {allDestinations.map((destinations: any, index: number) => (
-            <TouchableOpacity
-              style={styles.btn}
-              onPress={() => openGoogleMaps(destinations)}
-              key={index}
-            >
-              <Text style={styles.text}>Open {index + 1} Route</Text>
-            </TouchableOpacity>
-          ))}
-          {allDestinations.map((destinations: any, index: number) => (
-            <TouchableOpacity
-              style={styles.btn}
-              onPress={() => openGoogleMaps(destinations)}
-              key={index}
-            >
-              <Text style={styles.text}>Open {index + 1} Route</Text>
-            </TouchableOpacity>
+              count={index + 1}
+              openGoogleMaps={() => openGoogleMaps(destinations)}
+            />
           ))}
         </View>
       </ScrollView>
