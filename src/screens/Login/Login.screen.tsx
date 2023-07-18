@@ -13,13 +13,9 @@ const Login = () => (
     <View style={styles.backgroundImage} />
 
     <View style={styles.formContainer}>
-      <StyledText type3 style={styles.label}>
-        ユーザー名
-      </StyledText>
+      <StyledText style={styles.label}>ユーザー名</StyledText>
       <StyledTextInput style={styles.input} placeholder="ユーザー名を入力して下さい" />
-      <StyledText type3 style={styles.label}>
-        パスワード
-      </StyledText>
+      <StyledText style={styles.label}>パスワード</StyledText>
       <StyledTextInput style={styles.input} placeholder="パスワードを入力してください" />
       <Button primary text="ログイン" style={{ marginTop: 10 }} />
       <Button transparent text="アカウントを作成する" style={{ marginTop: 0 }} />

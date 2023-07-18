@@ -7,7 +7,7 @@ import { styles } from './ResumePackage.styles';
 export const ResumePackage = () => {
   return (
     <View style={styles.container}>
-      <StyledText lg style={{ margin: 13, lineHeight: 18 }}>
+      <StyledText primary lg bold style={{ margin: 13, lineHeight: 18 }}>
         概要情報
       </StyledText>
       <View style={styles.underline}></View>
@@ -20,7 +20,7 @@ export const ResumePackage = () => {
               総配送数
             </StyledText>
           </View>
-          <StyledText xl style={{ fontSize: 18, color: '#1C3180', lineHeight: 20 }}>
+          <StyledText grayDark lg style={{ lineHeight: 20 }}>
             31
           </StyledText>
         </View>
@@ -32,10 +32,10 @@ export const ResumePackage = () => {
             </StyledText>
           </View>
           <View style={styles.iconContainer}>
-            <StyledText xl style={{ fontSize: 18, color: '#1C3180', lineHeight: 20 }}>
+            <StyledText grayDark lg style={{ lineHeight: 20 }}>
               5:43
             </StyledText>
-            <StyledText lg style={{ fontSize: 14, color: '#1C3180', lineHeight: 18 }}>
+            <StyledText grayDark style={{ lineHeight: 18 }}>
               {' hs'}
             </StyledText>
           </View>

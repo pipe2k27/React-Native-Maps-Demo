@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
   backgroundImage: {
     width: width > 450 ? 675 : 600,
     height: 300,
-    backgroundColor: '#1C3180',
+    backgroundColor: theme.colors.primary,
     transform: [{ rotate: '20deg' }],
     position: 'relative',
     top: -110,
@@ -29,14 +29,10 @@ export const styles = StyleSheet.create({
   },
   label: {
     color: theme.colors.primary,
-    fontFamily: theme.fontFamily.primary,
   },
   input: {
     height: 50,
-    fontSize: theme.fontSize.sm,
     marginBottom: 16,
-    paddingLeft: 16,
-    paddingVertical: 0,
   },
   bottomlogo: {
     alignItems: 'center',

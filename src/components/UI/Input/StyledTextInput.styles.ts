@@ -3,12 +3,11 @@ import { theme } from '../../../theme';
 
 export const styles = StyleSheet.create({
   textInput: {
-    fontFamily: theme.fontFamily.primary,
+    height: 50,
     borderRadius: theme.borderRadius.regular,
     borderWidth: 1,
-    borderColor: theme.colors.grayDark1,
     textAlignVertical: 'center',
-    padding: 10,
+    paddingLeft: 16,
   },
   error: {
     borderColor: theme.colors.error,
