@@ -1,18 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Linking, StatusBar } from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Linking,
+  ScrollView,
+  Dimensions,
+  StatusBar,
+} from 'react-native';
+import { ResumePackage, StyledText, StyledTextInput } from '../../components';
 import packeges from '../../components/packages.json';
-import { Navbar, ResumePackage } from '../../components';
 import { theme } from '../../theme';
+import { SearchIcon } from '../../assets';
+import { styles } from './Home.styles';
+import { styles as ResumePackageStyles } from '../../components/UI/ResumePackage/ResumePackage.styles';
+
+type Waypoint = {
+  lat: number;
+  lng: number;
+};
 
 export const Home = () => {
-  const [allDestinations, setAllDestinations] = useState<any>([]);
-
-  const openGoogleMaps = async (destinations: any) => {
+  const [allDestinations, setAllDestinations] = useState<Waypoint[]>([]);
+  const { height, width } = Dimensions.get('window');
+  const openGoogleMaps = async (destinations: Waypoint[]) => {
     const destination = `${destinations[destinations.length - 1].lat}%2C${
       destinations[destinations.length - 1].lng
     }`;
     const baseUrl = `https://www.google.com/maps/dir/?api=1&origin=&destination=${destination}&travelmode=driving`;
-    const waypoints = destinations.map((element: any) => {
+    const waypoints = destinations.map((element) => {
       return `${element.lat}%2C${element.lng}`;
     });
     waypoints.pop();
@@ -36,34 +52,64 @@ export const Home = () => {
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor={theme.colors.primary} />
-      <ResumePackage />
-      {allDestinations.map((destinations: any, index: number) => (
-        <TouchableOpacity
-          style={styles.btn}
-          onPress={() => openGoogleMaps(destinations)}
-          key={index}
-        >
-          <Text style={styles.text}>Open {index + 1} Route</Text>
-        </TouchableOpacity>
-      ))}
+      <ScrollView contentContainerStyle={styles.scroll} stickyHeaderIndices={[3]}>
+        <ResumePackage />
+        <StyledText primary lg bold style={ResumePackageStyles.title}>
+          Google Mapsで配送を開始
+        </StyledText>
+        <View style={ResumePackageStyles.underline}></View>
+
+        <View style={styles.sticky}>
+          <StyledTextInput placeholder="配送先絞り込み" rightIcon={<SearchIcon />} />
+        </View>
+        <View style={styles.list}>
+          {allDestinations.map((destinations: any, index: number) => (
+            <TouchableOpacity
+              style={styles.btn}
+              onPress={() => openGoogleMaps(destinations)}
+              key={index}
+            >
+              <Text style={styles.text}>Open {index + 1} Route</Text>
+            </TouchableOpacity>
+          ))}
+          {allDestinations.map((destinations: any, index: number) => (
+            <TouchableOpacity
+              style={styles.btn}
+              onPress={() => openGoogleMaps(destinations)}
+              key={index}
+            >
+              <Text style={styles.text}>Open {index + 1} Route</Text>
+            </TouchableOpacity>
+          ))}
+          {allDestinations.map((destinations: any, index: number) => (
+            <TouchableOpacity
+              style={styles.btn}
+              onPress={() => openGoogleMaps(destinations)}
+              key={index}
+            >
+              <Text style={styles.text}>Open {index + 1} Route</Text>
+            </TouchableOpacity>
+          ))}
+          {allDestinations.map((destinations: any, index: number) => (
+            <TouchableOpacity
+              style={styles.btn}
+              onPress={() => openGoogleMaps(destinations)}
+              key={index}
+            >
+              <Text style={styles.text}>Open {index + 1} Route</Text>
+            </TouchableOpacity>
+          ))}
+          {allDestinations.map((destinations: any, index: number) => (
+            <TouchableOpacity
+              style={styles.btn}
+              onPress={() => openGoogleMaps(destinations)}
+              key={index}
+            >
+              <Text style={styles.text}>Open {index + 1} Route</Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+      </ScrollView>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingVertical: 80,
-    flexGrow: 1,
-  },
-  btn: {
-    backgroundColor: '#457b9d',
-    padding: 16,
-    borderRadius: 12,
-    marginBottom: 15,
-  },
-  text: {
-    color: '#fff',
-  },
-});
