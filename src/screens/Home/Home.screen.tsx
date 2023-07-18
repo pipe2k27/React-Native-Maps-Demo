@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Linking } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Linking, StatusBar } from 'react-native';
 import packeges from '../../components/packages.json';
-import { ResumePackage } from '../../components';
+import { Navbar, ResumePackage } from '../../components';
+import { theme } from '../../theme';
 
-const Home = () => {
+export const Home = () => {
   const [allDestinations, setAllDestinations] = useState<any>([]);
 
   const openGoogleMaps = async (destinations: any) => {
@@ -34,6 +35,8 @@ const Home = () => {
 
   return (
     <View style={styles.container}>
+      <StatusBar backgroundColor={theme.colors.primary} />
+      <ResumePackage />
       {allDestinations.map((destinations: any, index: number) => (
         <TouchableOpacity
           style={styles.btn}
@@ -43,7 +46,6 @@ const Home = () => {
           <Text style={styles.text}>Open {index + 1} Route</Text>
         </TouchableOpacity>
       ))}
-      <ResumePackage />
     </View>
   );
 };
@@ -65,5 +67,3 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
 });
-
-export default Home;

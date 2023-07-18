@@ -4,7 +4,7 @@ import { DipCoreLogo, NriBlueLogo } from '../../assets';
 import { styles } from './Login.styles';
 import { Button, StyledText, StyledTextInput } from '../../components';
 
-const Login = () => (
+export const Login = () => (
   <View style={{ flex: 1 }}>
     <View style={styles.logoContainer}>
       <DipCoreLogo width={'100%'} />
@@ -26,4 +26,3 @@ const Login = () => (
   </View>
 );
 
-export default Login;

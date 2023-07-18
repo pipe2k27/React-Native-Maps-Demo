@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
   },
   title: {
     margin: 13,
-    lineHeight: 18,
+    lineHeight: 24,
   },
   underline: {
     borderWidth: 1,
