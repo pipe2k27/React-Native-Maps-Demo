@@ -8,6 +8,7 @@ import {
   ScrollView,
   Dimensions,
   TextInput,
+  StatusBar,
 } from 'react-native';
 import { ResumePackage, StyledText } from '../../components';
 import packeges from '../../components/packages.json';
@@ -18,10 +19,9 @@ type Waypoint = {
   lng: number;
 };
 
-const Home = () => {
+export const Home = () => {
   const [allDestinations, setAllDestinations] = useState<Waypoint[]>([]);
   const { height, width } = Dimensions.get('window');
-
   const openGoogleMaps = async (destinations: Waypoint[]) => {
     const destination = `${destinations[destinations.length - 1].lat}%2C${
       destinations[destinations.length - 1].lng
@@ -49,10 +49,8 @@ const Home = () => {
   }, []);
 
   return (
-    <View style={styles.container}>
-      <View style={{ height: 200, width: '100%', backgroundColor: 'darkblue' }}>
-        <Text style={styles.text}>header</Text>
-      </View>
+    <>
+      <StatusBar backgroundColor={theme.colors.primary} />
       <ScrollView style={{ ...styles.scroll, height: height - 260 }} stickyHeaderIndices={[1]}>
         <ResumePackage />
         <View style={styles.sticky}>
@@ -71,7 +69,7 @@ const Home = () => {
           ))}
         </View>
       </ScrollView>
-    </View>
+    </>
   );
 };
 
@@ -107,5 +105,3 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
 });
-
-export default Home;

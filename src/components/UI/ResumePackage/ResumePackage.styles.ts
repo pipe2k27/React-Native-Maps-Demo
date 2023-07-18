@@ -6,6 +6,10 @@ export const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
   },
+  title: {
+    margin: 13,
+    lineHeight: 24,
+  },
   underline: {
     borderWidth: 1,
     borderColor: '#D9D9D9',
@@ -22,8 +26,18 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginBottom: 20,
   },
+  subtitle: {
+    marginLeft: 14,
+    lineHeight: 18,
+  },
   iconContainer: {
     flexDirection: 'row',
     alignItems: 'center',
+  },
+  data: {
+    lineHeight: 20,
+  },
+  hour: {
+    lineHeight: 18,
   },
 });
