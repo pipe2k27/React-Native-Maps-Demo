@@ -2,27 +2,24 @@ import { StyleSheet } from 'react-native';
 
 export const theme = {
   colors: {
-    primary: '#022d83',
+    primary: '#1C3180',
     default: '#1a1a1a',
-    greyDark1: '#8c8c8c',
-    grey: '#dcdcdc',
-    greyLigth1: '#f0f0f0',
+    grayDark: '#8c8c8c',
+    gray: '#dcdcdc',
+    grayLight: '#f0f0f0',
     white: '#FFFFFF',
+    error: 'red',
   },
   fontSize: {
-    type1: 32,
-    type2: 20,
-    type3: 16,
-    type4: 12,
-    type5: 8,
+    xl: 32,
+    lg: 20,
+    default: 16,
+    sm: 12,
+    xs: 8,
   },
-  fontWeigth: {
-    default: '400',
-    title: '700',
-  },
-  fontFamily: {
-    primary: 'NotoSansJP-Regular',
-    primaryBold: 'NotoSansJP-Bold',
+  fontWeight: {
+    regular: 'NotoSansJP-Regular',
+    bold: 'NotoSansJP-Bold',
   },
   borderRadius: {
     regular: 4,
