@@ -11,12 +11,5 @@ interface StyledTextInputProp extends TextInputProps {
 export const StyledTextInput: React.FC<StyledTextInputProp> = ({ error, style = {}, ...props }) => {
   const inputStyle = [styles.textInput, style, !!error && styles.error];
 
-  return (
-    <TextInput
-      style={inputStyle}
-      placeholderTextColor={theme.colors.grayLigth2}
-      multiline
-      {...props}
-    />
-  );
+  return <TextInput style={inputStyle} placeholderTextColor={'#cecece'} multiline {...props} />;
 };

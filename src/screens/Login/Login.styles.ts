@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
   },
   input: {
     height: 50,
-    fontSize: theme.fontSize.type4,
+    fontSize: theme.fontSize.sm,
     marginBottom: 16,
     paddingLeft: 16,
     paddingVertical: 0,

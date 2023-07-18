@@ -7,10 +7,10 @@ interface Props extends TouchableOpacityProps {
   text: string;
   primary?: boolean;
   transparent?: boolean;
-  type1?: boolean;
-  type2?: boolean;
+  xl?: boolean;
+  lg?: boolean;
   type3?: boolean;
-  type4?: boolean;
+  sm?: boolean;
   type5?: boolean;
 }
 
@@ -18,10 +18,10 @@ export const Button: React.FC<Props> = ({
   text,
   primary,
   transparent,
-  type1,
-  type2,
+  xl,
+  lg,
   type3,
-  type4,
+  sm,
   type5,
   style = {},
   ...props
@@ -31,10 +31,10 @@ export const Button: React.FC<Props> = ({
   const textStyles = {
     white: primary,
     grayLight: transparent,
-    type1,
-    type2,
+    xl,
+    lg,
     type3,
-    type4,
+    sm,
     type5,
   };
 

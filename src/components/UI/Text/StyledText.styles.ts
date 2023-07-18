@@ -2,40 +2,53 @@ import { StyleSheet } from 'react-native';
 import { theme } from '../../../theme';
 
 export const styles = StyleSheet.create({
-  text: {
+  defaultTextStyle: {
     color: theme.colors.default,
     letterSpacing: theme.letterSpacing.default,
-    fontFamily: theme.fontFamily.primary,
+    fontFamily: theme.fontWeight.regular,
+    fontSize: theme.fontSize.default,
     // lineHeight: theme.lineHeight.default,
   },
-  type1: {
-    fontFamily: theme.fontFamily.primaryBold,
-    fontSize: theme.fontSize.type1,
+
+  // Font Size
+
+  xl: {
+    // should this be bold ?
+    fontFamily: theme.fontWeight.regular, //
+    fontSize: theme.fontSize.xl,
   },
-  type2: {
-    fontFamily: theme.fontFamily.primary,
-    fontSize: theme.fontSize.type2,
+  lg: {
+    fontFamily: theme.fontWeight.regular,
+    fontSize: theme.fontSize.lg,
   },
-  type3: {
-    fontFamily: theme.fontFamily.primary,
-    fontSize: theme.fontSize.type3,
+  sm: {
+    fontFamily: theme.fontWeight.regular,
+    fontSize: theme.fontSize.sm,
   },
-  type4: {
-    fontFamily: theme.fontFamily.primary,
-    fontSize: theme.fontSize.type4,
+  xs: {
+    fontFamily: theme.fontWeight.regular,
+    fontSize: theme.fontSize.xs,
   },
-  type5: {
-    fontFamily: theme.fontFamily.primary,
-    fontSize: theme.fontSize.type5,
-  },
+
+  // Colors
   white: {
     color: theme.colors.white,
   },
-  grayLight: {
-    color: theme.colors.grayDark1,
+  gray: {
+    color: theme.colors.gray,
   },
-  subtitle: {
-    fontFamily: theme.fontFamily.primaryBold,
-    fontSize: theme.fontSize.type3,
+  grayDark: {
+    color: theme.colors.grayDark,
+  },
+  primary: {
+    color: theme.colors.primary,
+  },
+  grayLight: {
+    color: theme.colors.grayLight,
+  },
+
+  // Font Weight
+  bold: {
+    fontFamily: theme.fontWeight.bold,
   },
 });
