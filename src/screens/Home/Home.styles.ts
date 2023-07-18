@@ -20,7 +20,9 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 4,
   },
-  list: { padding: 20 },
+  list: {
+    padding: 20,
+  },
   btn: {
     backgroundColor: '#457b9d',
     padding: 16,

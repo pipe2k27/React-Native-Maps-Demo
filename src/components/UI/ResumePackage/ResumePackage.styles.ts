@@ -9,8 +9,10 @@ export const styles = StyleSheet.create({
   title: {
     margin: 13,
     lineHeight: 24,
+    alignSelf: 'center',
   },
   underline: {
+    alignSelf: 'center',
     borderWidth: 1,
     borderColor: '#D9D9D9',
     width: 70,
@@ -35,7 +37,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   data: {
-    lineHeight: 20,
+    lineHeight: 22,
   },
   hour: {
     lineHeight: 18,
