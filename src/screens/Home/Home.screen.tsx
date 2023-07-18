@@ -1,13 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  Linking,
-  ScrollView,
-  Dimensions,
-  StatusBar,
-} from 'react-native';
+import { View, Linking, ScrollView, StatusBar } from 'react-native';
 import { ResumePackage, StyledText, StyledTextInput, Trip } from '../../components';
 import packeges from '../../components/packages.json';
 import { theme } from '../../theme';
@@ -22,7 +14,6 @@ type Waypoint = {
 
 export const Home = () => {
   const [allDestinations, setAllDestinations] = useState<Waypoint[]>([]);
-  const { height, width } = Dimensions.get('window');
   const openGoogleMaps = async (destinations: Waypoint[]) => {
     const destination = `${destinations[destinations.length - 1].lat}%2C${
       destinations[destinations.length - 1].lng

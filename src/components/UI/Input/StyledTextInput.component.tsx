@@ -1,13 +1,14 @@
 import React from 'react';
-import { TextInput, TextInputProps, View, Text } from 'react-native';
-import { SearchIcon } from '../../../assets';
+import { TextInput, View } from 'react-native';
 import { styles } from './StyledTextInput.styles';
+import { ViewProps } from 'react-native-svg/lib/typescript/fabric/utils';
 
-interface StyledTextInputProp extends TextInputProps {
+interface StyledTextInputProp extends ViewProps {
   error?: string;
   errorMessage?: string;
   leftIcon?: React.ReactElement;
   rightIcon?: React.ReactElement;
+  placeholder?: string;
 }
 
 export const StyledTextInput: React.FC<StyledTextInputProp> = ({
@@ -15,14 +16,20 @@ export const StyledTextInput: React.FC<StyledTextInputProp> = ({
   style = {},
   leftIcon,
   rightIcon,
+  placeholder,
   ...props
 }) => {
-  const inputStyle = [styles.textInput, style, !!error && styles.error];
+  const inputStyle = [styles.inputWrapper, style, !!error && styles.error];
 
   return (
-    <View style={styles.inputWrapper}>
+    <View style={inputStyle}>
       {leftIcon ? <View style={{ marginRight: 8 }}>{leftIcon}</View> : null}
-      <TextInput style={inputStyle} placeholderTextColor={'#cecece'} {...props} />
+      <TextInput
+        style={styles.textInput}
+        placeholder={placeholder}
+        placeholderTextColor={'#cecece'}
+        {...props}
+      />
       {rightIcon ? rightIcon : null}
     </View>
   );
