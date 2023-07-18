@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
   },
 
   backgroundImage: {
-    width: width > 450 ? 675 : 600,
+    width: width * 1.5,
     height: 300,
     backgroundColor: theme.colors.primary,
     transform: [{ rotate: '20deg' }],

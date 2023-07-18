@@ -38,7 +38,7 @@ export const Trip: React.FC<Props> = ({ count, openGoogleMaps }) => {
             </StyledText>
             <TruckIcon />
           </View>
-          <Text>伝票番号・配送先名</Text>
+          <Text style={{ color: theme.colors.grayDark }}>伝票番号・配送先名</Text>
         </View>
       )}
       <View style={styles.infoWrapper}>
