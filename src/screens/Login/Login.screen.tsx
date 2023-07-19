@@ -20,7 +20,11 @@ export const Login = ({ navigation }: any) => (
         <StyledText style={styles.label}>ユーザー名</StyledText>
         <StyledTextInput style={styles.input} placeholder="ユーザー名を入力して下さい" />
         <StyledText style={styles.label}>パスワード</StyledText>
-        <StyledTextInput style={styles.input} placeholder="パスワードを入力してください" />
+        <StyledTextInput
+          style={styles.input}
+          placeholder="パスワードを入力してください"
+          secureTextEntry
+        />
         <Button
           primary
           text="ログイン"

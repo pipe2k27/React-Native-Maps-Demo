@@ -29,10 +29,11 @@ export const styles = StyleSheet.create({
   },
   label: {
     color: theme.colors.primary,
-    marginBottom: 4,
+    lineHeight: theme.fontSize.lg,
+    marginBottom: 9,
   },
   input: {
-    marginBottom: 16,
+    marginBottom: 25,
   },
   bottomlogo: {
     alignItems: 'center',
