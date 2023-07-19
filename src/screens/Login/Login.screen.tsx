@@ -1,11 +1,13 @@
 import React from 'react';
-import { View } from 'react-native';
+import { StatusBar, View } from 'react-native';
 import { DipCoreLogo, NriBlueLogo } from '../../assets';
 import { Button, StyledText, StyledTextInput } from '../../components';
+import { theme } from '../../theme';
 import { styles } from './Login.styles';
 
 export const Login = ({ navigation }: any) => (
   <View style={{ flex: 1 }}>
+    <StatusBar backgroundColor={theme.colors.primary} />
     <View style={styles.logoContainer}>
       <DipCoreLogo width={'100%'} />
     </View>

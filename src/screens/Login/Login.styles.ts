@@ -25,13 +25,13 @@ export const styles = StyleSheet.create({
   formContainer: {
     marginHorizontal: 30,
     position: 'relative',
-    top: width > 450 ? 0 : -20,
+    top: width > 450 ? 25 : -10,
   },
   label: {
     color: theme.colors.primary,
+    marginBottom: 4,
   },
   input: {
-    height: 50,
     marginBottom: 16,
   },
   bottomlogo: {
