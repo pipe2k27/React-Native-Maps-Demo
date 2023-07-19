@@ -45,7 +45,7 @@ export const Home = () => {
       <StatusBar backgroundColor={theme.colors.primary} />
       <ScrollView contentContainerStyle={styles.scroll} stickyHeaderIndices={[3]}>
         <ResumePackage />
-        <StyledText primary lg bold style={ResumePackageStyles.title}>
+        <StyledText primary bold style={ResumePackageStyles.title}>
           Google Mapsで配送を開始
         </StyledText>
         <View style={ResumePackageStyles.underline}></View>

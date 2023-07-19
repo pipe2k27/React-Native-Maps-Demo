@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
     alignItems: 'flex-end',
   },
   navbarTextContainer: {
-    paddingLeft: 40,
+    paddingLeft: 20,
     paddingTop: 20,
   },
   textColorGrey: {
