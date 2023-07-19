@@ -1,7 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
+import dateSlice from './date';
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    dateSlice,
+  },
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
