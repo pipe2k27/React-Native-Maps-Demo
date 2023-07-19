@@ -13,6 +13,7 @@ export const styles = StyleSheet.create({
   textInput: {
     flex: 1,
     textAlignVertical: 'center',
+    color: theme.colors.default,
   },
   error: {
     borderColor: theme.colors.error,
