@@ -5,9 +5,9 @@ import Routes from './src/routes/routes';
 
 function App(): JSX.Element {
   return (
-    // <Provider store={store}>
-    <Routes />
-    // </Provider>
+    <Provider store={store}>
+      <Routes />
+    </Provider>
   );
 }
 
