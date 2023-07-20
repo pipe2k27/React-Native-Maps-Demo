@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CheckBox from '@react-native-community/checkbox';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { CheckIcon, TruckIcon } from '../../../assets';
@@ -6,6 +6,7 @@ import { styles } from './Trip.styles';
 import { StyledText } from '../Text/StyledText.component';
 import { theme } from '../../../theme';
 import { TripType } from '../../../types/Trip';
+import { checkedTrip, existsTrip, uncheckedTrip } from '../../../utils/commonTrips';
 
 type Props = {
   trip: TripType;
@@ -14,6 +15,26 @@ type Props = {
 
 export const Trip: React.FC<Props> = ({ trip, openGoogleMaps }) => {
   const [isSelected, setSelection] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (isSelected) {
+      checkedTrip(trip.node_id);
+    } else {
+      uncheckedTrip(trip.node_id);
+    }
+  }, [isSelected]);
+
+  const checkIfTripIsChecked = async () => {
+    const exist = await existsTrip(trip.node_id);
+
+    if (exist) {
+      setSelection(true);
+    }
+  };
+
+  useEffect(() => {
+    checkIfTripIsChecked();
+  }, []);
 
   return (
     <View style={styles.tripWrapper}>
