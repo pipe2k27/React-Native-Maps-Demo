@@ -5,14 +5,15 @@ import { CheckIcon, TruckIcon } from '../../../assets';
 import { styles } from './Trip.styles';
 import { StyledText } from '../Text/StyledText.component';
 import { theme } from '../../../theme';
+import { TripType } from '../../../types/Trip';
 
 type Props = {
-  count: number;
-  openGoogleMaps: any;
+  trip: TripType;
+  openGoogleMaps: (lat: number, lng: number) => Promise<void>;
 };
 
-export const Trip: React.FC<Props> = ({ count, openGoogleMaps }) => {
-  const [isSelected, setSelection] = useState(false);
+export const Trip: React.FC<Props> = ({ trip, openGoogleMaps }) => {
+  const [isSelected, setSelection] = useState<boolean>(false);
 
   return (
     <View style={styles.tripWrapper}>
@@ -23,7 +24,7 @@ export const Trip: React.FC<Props> = ({ count, openGoogleMaps }) => {
               Trip
             </StyledText>
             <StyledText xl bold gray style={styles.textBig}>
-              {`${count}`}
+              {`${Number(trip.delivery_order) + 1}`}
             </StyledText>
             <CheckIcon />
           </View>
@@ -34,7 +35,7 @@ export const Trip: React.FC<Props> = ({ count, openGoogleMaps }) => {
           <View style={styles.infoWrapper}>
             <StyledText style={styles.text}>Trip</StyledText>
             <StyledText xl bold style={styles.textBig}>
-              {`${count}`}
+              {`${Number(trip.delivery_order) + 1}`}
             </StyledText>
             <TruckIcon />
           </View>
@@ -42,14 +43,14 @@ export const Trip: React.FC<Props> = ({ count, openGoogleMaps }) => {
         </View>
       )}
       <View style={styles.infoWrapper}>
-        <TouchableOpacity onPress={() => openGoogleMaps()}>
+        <TouchableOpacity onPress={() => openGoogleMaps(trip.lat, trip.lng)}>
           <StyledText primary>配送開始</StyledText>
         </TouchableOpacity>
         <CheckBox
-          value={isSelected}
-          onValueChange={setSelection}
-          tintColors={{ true: theme.colors.primary, false: theme.colors.gray }}
           style={styles.checkbox}
+          value={isSelected}
+          tintColors={{ true: theme.colors.primary, false: theme.colors.gray }}
+          onValueChange={setSelection}
         />
       </View>
     </View>

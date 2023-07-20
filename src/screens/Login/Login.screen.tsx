@@ -4,7 +4,6 @@ import { DipCoreLogo, NriBlueLogo } from '../../assets';
 import { Button, StyledText, StyledTextInput } from '../../components';
 import { theme } from '../../theme';
 import { styles } from './Login.styles';
-import { useNavigation } from '@react-navigation/native';
 
 export const Login = ({ navigation }: any) => (
   <View style={{ flex: 1 }}>
