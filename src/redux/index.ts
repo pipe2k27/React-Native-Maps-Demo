@@ -1,10 +1,22 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import loginReducer from './common/login.slice';
+import commonComponentReducer from './common/commonComponents.slice';
 
-export const store = configureStore({
-  reducer: {},
+const appReducer = combineReducers({
+  loginStatus: loginReducer,
+  commonComponents: commonComponentReducer,
 });
 
-// Infer the `RootState` and `AppDispatch` types from the store itself
+const rootReducer = (state: any, action: any) => {
+  if (action.type === 'SIGN_OUT') {
+    state = undefined;
+  }
+  return appReducer(state, action);
+};
+
+export const store = configureStore({
+  reducer: { rootReducer },
+});
+
 export type RootState = ReturnType<typeof store.getState>;
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type AppDispatch = typeof store.dispatch;
