@@ -7,7 +7,7 @@ import { DatePickerIcon, DipCoreLogo, NriWhiteLogo } from '../../../assets';
 import { StyledText } from '../..';
 import { DateTimePickerAndroid } from '@react-native-community/datetimepicker';
 import { useAppDispatch, useAppSelector } from '../../../redux/hook';
-import { setDateSelected } from '../../../redux/date';
+import { setDateSelected } from '../../../redux/homeData.slice';
 
 interface Props extends ViewProps {}
 
@@ -16,7 +16,7 @@ export const Navbar: React.FC<Props> = ({ style = {}, ...props }) => {
   const [date, setDate] = useState(new Date());
 
   const dispatch = useAppDispatch();
-  const { dateSelected } = useAppSelector((state) => state.dateSlice);
+  const { dateSelected } = useAppSelector((state) => state.rootReducer.homeData);
 
   const onChange = (event: any, selectedDate: any) => {
     const currentDate = selectedDate;
