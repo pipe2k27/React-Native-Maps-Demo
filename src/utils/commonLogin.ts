@@ -18,7 +18,6 @@ export const commonLogin = async (data: Data, navigation: any) => {
     if (isValid.status === 200) {
       AsyncStorage.setItem('isAuthenticated', 'true');
       store.dispatch(setIsAuthenticated(true));
-      navigation.navigate('Home', {});
     }
   } catch (error: any) {
     setAppError('', 'ID/PASSでログイン出来ませんでした。');

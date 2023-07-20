@@ -21,10 +21,6 @@ export const Login = ({ navigation }: any) => {
     commonLogin({ user: email, password }, navigation);
   };
 
-  useEffect(() => {
-    if (isAuthenticated) navigation.navigate('Home');
-  }, []);
-
   return (
     <View style={{ flex: 1 }}>
       <StatusBar backgroundColor={theme.colors.primary} />
@@ -45,6 +41,7 @@ export const Login = ({ navigation }: any) => {
           />
           <StyledText style={styles.label}>パスワード</StyledText>
           <StyledTextInput
+            secureTextEntry
             style={styles.input}
             placeholder="パスワードを入力してください"
             value={password}
