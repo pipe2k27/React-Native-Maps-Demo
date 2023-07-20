@@ -3,7 +3,7 @@ import { theme } from '../../../theme';
 
 export const styles = StyleSheet.create({
   primary: {
-    height: 50,
+    minHeight: 50,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 15,
   },
   transparent: {
-    height: 30,
+    minHeight: 30,
     display: 'flex',
     justifyContent: 'flex-start',
     alignItems: 'center',

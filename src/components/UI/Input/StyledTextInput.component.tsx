@@ -11,6 +11,7 @@ interface StyledTextInputProp extends ViewProps {
   placeholder?: string;
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  secureTextEntry?: boolean;
 }
 
 export const StyledTextInput: React.FC<StyledTextInputProp> = ({
@@ -21,6 +22,7 @@ export const StyledTextInput: React.FC<StyledTextInputProp> = ({
   placeholder,
   value,
   onChange,
+  secureTextEntry,
   ...props
 }) => {
   const inputStyle = [styles.inputWrapper, style, !!error && styles.error];
@@ -29,6 +31,7 @@ export const StyledTextInput: React.FC<StyledTextInputProp> = ({
     <View style={inputStyle}>
       {leftIcon ? <View style={{ marginRight: 8 }}>{leftIcon}</View> : null}
       <TextInput
+        secureTextEntry={secureTextEntry}
         style={styles.textInput}
         placeholder={placeholder}
         placeholderTextColor={'#cecece'}

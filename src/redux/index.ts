@@ -1,10 +1,12 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import loginReducer from './common/login.slice';
 import commonComponentReducer from './common/commonComponents.slice';
+import homeDataReducer from './homeData.slice';
 
 const appReducer = combineReducers({
   loginStatus: loginReducer,
   commonComponents: commonComponentReducer,
+  homeData: homeDataReducer,
 });
 
 const rootReducer = (state: any, action: any) => {

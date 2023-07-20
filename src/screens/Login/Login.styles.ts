@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
     alignSelf: 'center',
   },
 
-  backgroundImage: {
+  blueTopSection: {
     width: width * 1.5,
     height: 300,
     backgroundColor: theme.colors.primary,
@@ -23,21 +23,24 @@ export const styles = StyleSheet.create({
     left: -100,
   },
   formContainer: {
-    marginHorizontal: 30,
+    paddingHorizontal: 30,
     position: 'relative',
     top: width > 450 ? 25 : -10,
   },
   label: {
     color: theme.colors.primary,
-    marginBottom: 4,
+    lineHeight: theme.fontSize.lg,
+    marginBottom: 9,
   },
   input: {
-    marginBottom: 16,
+    marginBottom: 25,
   },
   bottomlogo: {
     alignItems: 'center',
-    flex: 1,
-    justifyContent: 'flex-end',
-    paddingBottom: 38,
+    marginTop: 70,
+    marginBottom: 30,
+    // flex: 1,
+    // justifyContent: 'flex-end',
+    // paddingBottom: 38,
   },
 });
