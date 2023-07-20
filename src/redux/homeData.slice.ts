@@ -9,7 +9,7 @@ const initialState: DateState = {
 };
 
 export const dateSlice = createSlice({
-  name: 'date',
+  name: 'homeData',
   initialState,
   reducers: {
     setDateSelected: (state, action: PayloadAction<string>) => {

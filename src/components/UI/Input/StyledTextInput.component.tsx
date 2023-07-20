@@ -11,6 +11,9 @@ interface StyledTextInputProp extends ViewProps {
   placeholder?: string;
   ref?: any;
   isSearchActive?: boolean;
+  value?: string;
+  secureTextEntry?: boolean;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onChangeText?: (text: string) => void;
   onBlur?: () => void;
   onPressIn?: () => void;
@@ -32,6 +35,9 @@ export const StyledTextInput: React.FC<StyledTextInputProp> = forwardRef(
       isSearchActive,
       scrollToChild,
       onFocus,
+      value,
+      onChange,
+      secureTextEntry,
       ...props
     },
     ref
@@ -43,13 +49,16 @@ export const StyledTextInput: React.FC<StyledTextInputProp> = forwardRef(
         {leftIcon ? <View style={{ marginRight: 8 }}>{leftIcon}</View> : null}
         <TextInput
           ref={ref && ref}
+          value={value}
           style={styles.textInput}
           placeholder={placeholder}
           placeholderTextColor={'#cecece'}
+          secureTextEntry={secureTextEntry}
           onChangeText={onChangeText}
           onBlur={onBlur && onBlur}
           onFocus={onFocus && onFocus}
           onPressIn={onPressIn && onPressIn}
+          onChange={onChange && onChange}
           {...props}
         />
         {rightIcon ? rightIcon : null}
