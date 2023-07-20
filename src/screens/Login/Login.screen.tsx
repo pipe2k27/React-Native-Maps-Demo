@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { ScrollView, StatusBar, View } from 'react-native';
 import { DipCoreLogo, NriBlueLogo } from '../../assets';
 import { Button, StyledText, StyledTextInput } from '../../components';

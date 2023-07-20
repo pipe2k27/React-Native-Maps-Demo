@@ -1,5 +1,7 @@
-import { StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
 import { theme } from '../../theme';
+
+const { height } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   container: {
@@ -9,6 +11,7 @@ export const styles = StyleSheet.create({
     backgroundColor: theme.colors.white,
     width: '100%',
     overflow: 'scroll',
+    minHeight: height - 100,
   },
   sticky: {
     backgroundColor: theme.colors.white,
@@ -31,5 +34,8 @@ export const styles = StyleSheet.create({
   },
   text: {
     color: '#fff',
+  },
+  extraPadding: {
+    paddingBottom: height - 260,
   },
 });
