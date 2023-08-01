@@ -12,6 +12,9 @@ export const styles = StyleSheet.create({
     paddingBottom: 7,
     borderBottomWidth: 1,
     borderBottomColor: theme.colors.gray,
+    borderLeftWidth: 1,
+    borderLeftColor: theme.colors.gray,
+    marginLeft: 30,
   },
   infoWrapper: {
     flexDirection: 'row',
@@ -19,7 +22,6 @@ export const styles = StyleSheet.create({
   },
   text: {
     lineHeight: 20,
-    marginLeft: 12,
   },
   textBig: {
     lineHeight: 36,
@@ -31,5 +33,9 @@ export const styles = StyleSheet.create({
   checkbox: {
     transform: [{ scaleX: 1 }, { scaleY: 1 }],
     marginLeft: 10,
+  },
+  walk: {
+    top: -3,
+    left: 3,
   },
 });
