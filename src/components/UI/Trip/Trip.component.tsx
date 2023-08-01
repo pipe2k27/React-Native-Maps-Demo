@@ -19,15 +19,15 @@ const HARDCODED_PACKAGES = [1, 2, 3, 4, 5, 6, 7];
 
 export const Trip: React.FC<Props> = ({ trip, openGoogleMaps }) => {
   const [isSelected, setSelection] = useState<boolean>(false);
-  const [isExpanded, setIsExpanded] = useState<boolen>(false);
+  const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
-  // useEffect(() => {
-  //   if (isSelected) {
-  //     checkedTrip(trip.node_id);
-  //   } else {
-  //     uncheckedTrip(trip.node_id);
-  //   }
-  // }, [isSelected]);
+  useEffect(() => {
+    if (isSelected) {
+      checkedTrip(trip.node_id);
+    } else {
+      uncheckedTrip(trip.node_id);
+    }
+  }, [isSelected]);
 
   const checkIfTripIsChecked = async () => {
     const exist = await existsTrip(trip.node_id);
@@ -37,9 +37,9 @@ export const Trip: React.FC<Props> = ({ trip, openGoogleMaps }) => {
     }
   };
 
-  // useEffect(() => {
-  //   checkIfTripIsChecked();
-  // }, []);
+  useEffect(() => {
+    checkIfTripIsChecked();
+  }, []);
 
   const handlePress = () => {
     setIsExpanded((prev: boolean) => !prev);
