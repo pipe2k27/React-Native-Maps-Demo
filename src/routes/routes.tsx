@@ -2,13 +2,14 @@ import React, { useEffect } from 'react';
 import { View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { AppErrorModal, LoadingSpinner, Navbar } from '../components';
-import { Home, Login } from '../screens';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useDispatch, useSelector } from 'react-redux';
+import { AppErrorModal, LoadingSpinner, Navbar } from '../components';
+import { Home, Login, MapPreview } from '../screens';
 import { RootState } from '../redux';
 import { commonLogout, setLoading } from '../utils';
 import { setIsAuthenticated } from '../redux/common/login.slice';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { PATHS } from './paths';
 
 const Routes = (): JSX.Element => {
   const dispatch = useDispatch();
@@ -39,17 +40,20 @@ const Routes = (): JSX.Element => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
+      <Stack.Navigator initialRouteName={PATHS.LOGIN}>
         {isAuthenticated ? (
-          <Stack.Screen
-            name="Home"
-            component={Home}
-            options={{
-              header: () => <Navbar />,
-            }}
-          />
+          <>
+            <Stack.Screen
+              name={PATHS.HOME}
+              component={Home}
+              options={{
+                header: () => <Navbar />,
+              }}
+            />
+            <Stack.Screen name={PATHS.MAP} component={MapPreview} />
+          </>
         ) : (
-          <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
+          <Stack.Screen name={PATHS.LOGIN} component={Login} options={{ headerShown: false }} />
         )}
       </Stack.Navigator>
       <AppErrorModal />

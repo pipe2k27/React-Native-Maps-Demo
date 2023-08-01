@@ -1,14 +1,15 @@
 import React, { useRef, useState } from 'react';
-import { View, Linking, ScrollView, StatusBar } from 'react-native';
-import { ResumePackage, StyledText, StyledTextInput, Trip } from '../../components';
+import { View, Linking, ScrollView, StatusBar, TouchableOpacity } from 'react-native';
+import { Button, ResumePackage, StyledText, StyledTextInput, Trip } from '../../components';
 import packages from '../../components/packages.json';
 import { theme } from '../../theme';
-import { SearchIcon } from '../../assets';
+import { MapIcon, SearchIcon } from '../../assets';
 import { styles } from './Home.styles';
 import { styles as ResumePackageStyles } from '../../components/UI/ResumePackage/ResumePackage.styles';
 import { TripType } from '../../types/Trip';
+import { PATHS } from '../../routes/paths';
 
-export const Home: React.FC = () => {
+export const Home: React.FC<any> = ({ navigation }) => {
   const [tripList, setTripList] = useState<TripType[]>(packages);
   const [isFocused, setIsFocused] = useState<boolean>(false);
 
@@ -51,7 +52,6 @@ export const Home: React.FC = () => {
         ref={scrollViewRef}
       >
         <ResumePackage />
-
         <StyledText primary bold style={ResumePackageStyles.title}>
           Google Mapsで配送を開始
         </StyledText>
@@ -82,6 +82,14 @@ export const Home: React.FC = () => {
           )}
         </View>
       </ScrollView>
+      <View style={styles.bottomContainer}>
+        <Button
+          variation="primary"
+          text="プレビュールート"
+          iconLeft={<MapIcon />}
+          onPress={() => navigation.navigate(PATHS.MAP)}
+        />
+      </View>
     </View>
   );
 };

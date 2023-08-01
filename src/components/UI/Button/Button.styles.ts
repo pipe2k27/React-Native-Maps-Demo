@@ -2,6 +2,9 @@ import { StyleSheet } from 'react-native';
 import { theme } from '../../../theme';
 
 export const styles = StyleSheet.create({
+  default: {
+    alignItems: 'center',
+  },
   primary: {
     minHeight: 50,
     display: 'flex',

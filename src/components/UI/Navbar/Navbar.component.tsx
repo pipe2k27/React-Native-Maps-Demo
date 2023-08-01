@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { TouchableOpacity, View, ViewProps } from 'react-native';
 import { format } from 'date-fns';
 import { ja } from 'date-fns/locale';
-import { TouchableOpacity, View, ViewProps } from 'react-native';
-import { styles } from './Navbar.styles';
-import { DatePickerIcon, DipCoreLogo, NriWhiteLogo } from '../../../assets';
-import { StyledText } from '../..';
 import { DateTimePickerAndroid } from '@react-native-community/datetimepicker';
 import { useAppDispatch, useAppSelector } from '../../../redux/hook';
 import { setDateSelected } from '../../../redux/homeData.slice';
+import { StyledText } from '../..';
+import { DatePickerIcon, DipCoreLogo, MapIcon, NriWhiteLogo } from '../../../assets';
+import { styles } from './Navbar.styles';
 
 interface Props extends ViewProps {}
 

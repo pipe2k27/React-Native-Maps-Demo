@@ -38,4 +38,13 @@ export const styles = StyleSheet.create({
   extraPadding: {
     paddingBottom: height - 260,
   },
+  bottomContainer: {
+    backgroundColor: theme.colors.white,
+    padding: 10,
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
+    borderTopColor: theme.colors.grayDark,
+    borderTopWidth: 0.5,
+  },
 });

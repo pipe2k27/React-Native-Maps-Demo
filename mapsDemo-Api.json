@@ -1,6 +1,6 @@
 {
   "uuid": "b73e027c-3b8f-4977-95c3-a32368040d89",
-  "lastMigration": 27,
+  "lastMigration": 28,
   "name": "MapsDemos Api",
   "endpointPrefix": "",
   "latency": 0,
@@ -45,7 +45,8 @@
           "rulesOperator": "AND",
           "disableTemplating": false,
           "fallbackTo404": false,
-          "default": true
+          "default": true,
+          "crudKey": "id"
         }
       ],
       "enabled": true,
@@ -73,7 +74,8 @@
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
-          "default": true
+          "default": true,
+          "crudKey": "id"
         }
       ],
       "enabled": true,
@@ -101,7 +103,8 @@
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,
-          "default": true
+          "default": true,
+          "crudKey": "id"
         }
       ],
       "enabled": true,
