@@ -47,8 +47,8 @@ export const Login = ({ navigation }: any) => {
             value={password}
             onChange={handleChangeInput(setPassword)}
           />
-          <Button primary text="ログイン" style={{ marginTop: 10 }} onPress={onSubmit} />
-          <Button transparent text="アカウントを作成する" style={{ marginTop: 0 }} />
+          <Button variant="primary" text="ログイン" style={{ marginTop: 10 }} onPress={onSubmit} />
+          <Button variant="transparent" text="アカウントを作成する" style={{ marginTop: 0 }} />
         </View>
         <View style={styles.bottomlogo}>
           <NriBlueLogo />
