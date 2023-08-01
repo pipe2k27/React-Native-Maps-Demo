@@ -26,7 +26,7 @@ export const AppErrorModal = () => {
               <StyledText>{message || ''}</StyledText>
             </View>
             <View style={styles.btnContainer}>
-              <Button text="Close" primary onPress={() => setAppError('', '', false)} />
+              <Button text="Close" variant="primary" onPress={() => setAppError('', '', false)} />
             </View>
           </View>
         </Pressable>

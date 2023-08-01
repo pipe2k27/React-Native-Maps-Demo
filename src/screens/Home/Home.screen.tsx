@@ -84,7 +84,7 @@ export const Home: React.FC<any> = ({ navigation }) => {
       </ScrollView>
       <View style={styles.bottomContainer}>
         <Button
-          variation="primary"
+          variant="primary"
           text="プレビュールート"
           iconLeft={<MapIcon />}
           onPress={() => navigation.navigate(PATHS.MAP)}

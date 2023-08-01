@@ -10,7 +10,7 @@ interface Props extends TouchableOpacityProps {
   transparent?: boolean;
   iconLeft?: ReactElement;
   iconRight?: ReactElement;
-  variation?: 'primary' | 'transparent';
+  variant?: 'primary' | 'transparent';
 }
 
 export const Button: React.FC<Props> = ({
@@ -21,17 +21,17 @@ export const Button: React.FC<Props> = ({
   children,
   iconLeft,
   iconRight,
-  variation,
+  variant,
   ...props
 }) => {
   const textStyles = {
-    primary: variation !== 'primary',
-    white: variation === 'primary',
+    primary: variant !== 'primary',
+    white: variant === 'primary',
     lineHeightPrimary: true,
   };
 
   return (
-    <TouchableOpacity style={[styles.default, variation ? styles[variation] : {}]} {...props}>
+    <TouchableOpacity style={[styles.default, variant ? styles[variant] : {}]} {...props}>
       <View style={{ flexDirection: 'row', flexWrap: 'nowrap', alignItems: 'center' }}>
         {iconLeft ? iconLeft : null}
         <StyledText {...textStyles} children={text} style={{ marginHorizontal: 10 }} />
