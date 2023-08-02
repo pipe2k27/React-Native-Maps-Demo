@@ -1,7 +1,7 @@
 import { Dimensions, StyleSheet } from 'react-native';
 import { theme } from '../../theme';
 
-const { height } = Dimensions.get('window');
+const { height, width } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   container: {
@@ -39,12 +39,8 @@ export const styles = StyleSheet.create({
     paddingBottom: height - 260,
   },
   bottomContainer: {
+    width: width,
     backgroundColor: theme.colors.white,
     padding: 10,
-    position: 'absolute',
-    bottom: 0,
-    width: '100%',
-    borderTopColor: theme.colors.grayDark,
-    borderTopWidth: 0.5,
   },
 });

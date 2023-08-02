@@ -8,6 +8,7 @@ import { styles } from './Home.styles';
 import { styles as ResumePackageStyles } from '../../components/UI/ResumePackage/ResumePackage.styles';
 import { TripType } from '../../types/Trip';
 import { PATHS } from '../../routes/paths';
+import { Shadow } from 'react-native-shadow-2';
 
 export const Home: React.FC<any> = ({ navigation }) => {
   const [tripList, setTripList] = useState<TripType[]>(packages);
@@ -82,14 +83,16 @@ export const Home: React.FC<any> = ({ navigation }) => {
           )}
         </View>
       </ScrollView>
-      <View style={styles.bottomContainer}>
-        <Button
-          variant="primary"
-          text="プレビュールート"
-          iconLeft={<MapIcon />}
-          onPress={() => navigation.navigate(PATHS.MAP)}
-        />
-      </View>
+      <Shadow offset={[0, -3]} distance={13} startColor="rgba(0, 0, 0, 0.06)">
+        <View style={styles.bottomContainer}>
+          <Button
+            variant="primary"
+            text="プレビュールート"
+            iconLeft={<MapIcon />}
+            onPress={() => navigation.navigate(PATHS.MAP)}
+          />
+        </View>
+      </Shadow>
     </View>
   );
 };
