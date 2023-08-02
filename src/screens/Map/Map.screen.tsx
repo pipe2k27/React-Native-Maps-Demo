@@ -7,10 +7,11 @@ import MapView, {
   Polyline,
   PROVIDER_GOOGLE,
 } from 'react-native-maps';
+// import MapViewDirections from 'react-native-maps-directions';
+// import { GOOGLE_MAPS_KEY } from '@env';
 import mockPackages from '../../components/packages.json';
+import { pin01 } from '../../assets';
 import { getStyles } from './Map.styles';
-import MapViewDirections from 'react-native-maps-directions';
-import { GOOGLE_MAPS_KEY } from '@env';
 
 const initRegion = {
   latitude: 35.664522250653064,
@@ -39,13 +40,11 @@ export const MapPreview: React.FC = ({ navigation }: any) => {
             latitude: pol.lat,
             longitude: pol.lng,
           }));
-          // console.log(`polylines ${pkg.node_id}`, polylines);
           tmpRoutes.push(...polylines);
         }
         tmpRoutes.push({ latitude: pkg.lat, longitude: pkg.lng });
         tmpPackages.push({ latitude: pkg.lat, longitude: pkg.lng });
       });
-      // console.log(`tmpRoutes`, tmpRoutes);
       setRoute(tmpRoutes);
       setPackages(tmpPackages);
       setRegion({ ...initRegion, ...tmpPackages[0] });
@@ -69,15 +68,25 @@ export const MapPreview: React.FC = ({ navigation }: any) => {
           region={region}
           onPanDrag={(map: any) => handleDrag(map)}
         >
-          <Polyline coordinates={route} strokeColor="red" strokeWidth={4} />
-          {packages?.map((pkg, pkgIndex) => (
-            <Marker key={pkgIndex} coordinate={pkg} />
-          ))}
           {/* <MapViewDirections
-            apikey={GOOGLE_MAPS_KEY}
-            origin={packages[0]}
-            destination={packages[1]}
-          /> */}
+          apikey={GOOGLE_MAPS_KEY}
+          origin={packages[0]}
+          destination={packages[packages.length - 1]}
+          waypoints={packages}
+          strokeColor="red"
+          strokeWidth={4}
+        /> */}
+          <Polyline
+            coordinates={route}
+            strokeColor="darkblue"
+            strokeWidth={4}
+            // these two following are for dashed lines only
+            // lineDashPattern={[20, 10]}
+            // lineCap={'square'}
+          />
+          {packages?.map((pkg, pkgIndex) => (
+            <Marker key={pkgIndex} coordinate={pkg} image={pin01} />
+          ))}
         </MapView>
         <Text>{JSON.stringify(map, null, 2)}</Text>
       </View>
