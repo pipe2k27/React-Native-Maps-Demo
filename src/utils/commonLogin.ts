@@ -13,12 +13,12 @@ interface Data {
 export const commonLogin = async (data: Data, navigation: any) => {
   try {
     setLoading(true);
-    const params = { user: data.user, password: data.password };
-    const isValid = await login(params);
-    if (isValid.status === 200) {
-      AsyncStorage.setItem('isAuthenticated', 'true');
-      store.dispatch(setIsAuthenticated(true));
-    }
+    // const params = { user: data.user, password: data.password };
+    // const isValid = await login(params);
+    // if (isValid.status === 200) {
+    AsyncStorage.setItem('isAuthenticated', 'true');
+    store.dispatch(setIsAuthenticated(true));
+    // }
   } catch (error: any) {
     setAppError('', 'ID/PASSでログイン出来ませんでした。');
   } finally {

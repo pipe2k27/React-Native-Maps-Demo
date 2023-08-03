@@ -7,12 +7,12 @@ import { store } from '../redux';
 
 export const commonLogout = async () => {
   try {
-    const isLoggedOut = await logout();
-    if (isLoggedOut) {
-      store.dispatch(resetLoginState());
-      store.dispatch(resetCommonComponents());
-      AsyncStorage.removeItem('isAuthenticated');
-    }
+    // const isLoggedOut = await logout();
+    // if (isLoggedOut) {
+    store.dispatch(resetLoginState());
+    store.dispatch(resetCommonComponents());
+    AsyncStorage.removeItem('isAuthenticated');
+    // }
   } catch (error: any) {
     setAppError(error?.code, error?.message);
   }
