@@ -42,5 +42,6 @@ export const styles = StyleSheet.create({
     width: width,
     backgroundColor: theme.colors.white,
     padding: 10,
+    paddingBottom: 24,
   },
 });

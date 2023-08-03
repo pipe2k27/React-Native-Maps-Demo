@@ -9,7 +9,7 @@ type Env = {
 const getEnv = () => {
   const envAPI: Env = {
     // format envAPI for server connection
-    baseURL: 'http://10.0.2.2',
+    baseURL: 'http://localhost',
     port: '8080',
     path: '/',
   };
